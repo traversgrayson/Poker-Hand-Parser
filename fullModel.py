@@ -24,7 +24,7 @@ model.add(Dense(6, activation='softmax'))
 model.compile(loss='categorical_crossentropy', optimizer= 'AdaGrad', metrics=['accuracy'])
 
 # Fit the model
-model.fit(X, Y, epochs=200, batch_size=32)
+model.fit(X, Y, epochs=500, batch_size=32)
 
 b = model.predict_classes(x= X, batch_size= 32)
 

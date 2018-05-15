@@ -1,0 +1,23 @@
+library(dplyr)
+# Load the data
+read.csv("test.csv")
+#Starting # of observations = 93740
+#Remove games where there are more than one winner
+filtered1 <- test %>% filter(rowSums(test[,85:90])==1)
+#Remove games where everybody folds immediately as the network
+#will never be able to make a better assessment than guessing for
+#these games
+filtered2 <- filtered1 %>% filter(rowSums(filtered1[,19:24])!=0)
+#Remove the columns for Pocket Cards bets b/c they are always 0
+#(In the pocket cards, a bet is considered a raise)
+#Also remove columns for obfuscated player names, which cannot
+#be interpreted by Keras
+cleaned <- filtered2[, -c(1:6, 13:18)]
+#removes all rows with NAs, Nulls, or other missing values, which
+#cannot be interpereted by keras
+#Final # of observations = 55022
+noNAs <- cleaned[complete.cases(cleaned),]
+#save the data as a csv. quote=F removes the quoted line numbers
+#from the beginning of each line, which cannot be interpereted by
+#keras.
+write.csv(noNAs, "poker_data_clean.csv", quote=F)
