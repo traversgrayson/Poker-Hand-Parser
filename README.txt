@@ -72,6 +72,7 @@ WITHOUT STACK SIZE
 ------------------
 
 ACCURACY: --> | | 88.71% | | <--
+
 NOTE: The accuracy is increased when the stack size is removed likely because the stack size provides little to no useful information about who is going to win the game. We originally thought that this might be a proxy variable for how often a player wins, but if that is the case, our model is not recognizing it. Basically, then, the stack size variables serve only to increase the amount of epochs the model takes to train, as it has to shrink weights for the edges that carry stack size information. If we had the computational power to run models to a state of better convergence, we would expect this difference to disappear. 
  
 ### -----------------------------------------------------------------------------------###
@@ -83,6 +84,8 @@ FIRST 12 VARIABLES -  Next we trained our model instead using the first 12 varia
 ACCURACY: 70.24%
 
 After 200 epochs the accuracy of our model was ~0.70 for the training set. Once again after training the model, we tested the model on a different subset of 17,000 games. The model had an accuracy of 70.24%. 
+
+NOTE: When there were no bets, the network intelligently chose the dealer as the winner. Because of the increased amount of information the dealer has on other players (from acting last) the dealer wins slightly more on average.
 
 ------------------
 WITHOUT STACK SIZE
