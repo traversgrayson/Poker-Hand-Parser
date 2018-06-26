@@ -1,4 +1,4 @@
-from final import *
+from main import *
 import io
 
 # Create training set
