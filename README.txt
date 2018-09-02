@@ -117,7 +117,7 @@ ACCURACY: 75.90%
 This project represents a foray into capturing the relationship between player betting behavior and winning in poker. In general, we found that with information on all bets, calls, and raises, the neural network was able to predict the winner of a game with incredible accuracy. This is not altogether surprising, though, as a player who is still betting and raising late in the game is extremely likely to win. However, even when we restricted the network’s inputs to player actions during the pocket cards and the flop, we found that approximately 75% of all match winners can be predicted from betting behavior during the early game alone. This means that 75% of the information needed to know who will win a hand is available to all players at the table. The skill and challenge in poker, then, is to ascertain as much of the remaining 25% as possible through other means. It is important to note that our sample of online poker is not representative for all poker, especially considering that the general low stakes and impersonal atmosphere of the web encourages tighter more algorithmic play. 
 
 ######################    Section 6: How to Use    #######################################
-1. cd into the directory with final.py, flopBet.py, poker_data_clean.csv ...
+1. cd into the directory with main.py, flopBet.py, poker_data_clean.csv ...
 2. For your file of choice type in the console <python filename.py> and press enter
    - The neural network will be run using the file with the chosen inputs
 
