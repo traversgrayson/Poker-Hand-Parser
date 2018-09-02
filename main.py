@@ -16,18 +16,17 @@ Original file is located at
 
 ######Set up and check GPU########
 import tensorflow as tf
-device_name = tf.test.gpu_device_name()
-if device_name != '/device:GPU:0':
-  raise SystemError('GPU device not found')
-print('Found GPU at: {}'.format(device_name))
+# device_name = tf.test.gpu_device_name()
+# if device_name != '/device:GPU:0':
+#   raise SystemError('GPU device not found')
+# print('Found GPU at: {}'.format(device_name))
 
 
 ####Set Up Keras######
 from keras.models import Sequential
-from keras.layers import Dense
+from keras.layers import Dense, Dropout
 from keras.utils import plot_model
-import pydot
-import graphviz
+# import graphviz
 import numpy
 # set the seed for reproducibility
 #numpy.random.seed(7)

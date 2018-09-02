@@ -1,6 +1,7 @@
+install.packages("dplyr")
 library(dplyr)
 # Load the data
-read.csv("test.csv")
+test = read.csv("test.csv")
 #Starting # of observations = 93740
 #Remove games where there are more than one winner
 filtered1 <- test %>% filter(rowSums(test[,85:90])==1)
@@ -20,4 +21,4 @@ noNAs <- cleaned[complete.cases(cleaned),]
 #save the data as a csv. quote=F removes the quoted line numbers
 #from the beginning of each line, which cannot be interpereted by
 #keras.
-write.csv(noNAs, "poker_data_clean.csv", quote=F)
+write.csv(noNAs, "poker_data_clean_3.csv", quote=F)

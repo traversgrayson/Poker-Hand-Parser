@@ -1,4 +1,4 @@
-# Libraries Included:
+ # Libraries Included:
 # Numpy, Scipy, Scikit, Pandas
 import csv
 import glob
@@ -398,43 +398,46 @@ def parseHandFile(filename):
     global writer
     file = open(filename)
     for line in file:
-        myStr = line.strip()
-       # print(myStr)
-        if ("Stage" in myStr):
-            if myState != 0:
-               gmAry = makeGameArray()
-               writer.writerow(gmAry) 
-        ### Write to CSV ###
-            initGame()
-        setState(myStr) 
+    	try:	
+        	myStr = line.strip()
+       		# print(myStr)
+        	if ("Stage" in myStr):
+        	    if myState != 0:
+               		gmAry = makeGameArray()
+               		writer.writerow(gmAry) 
+        	### Write to CSV ###
+        		initGame()
+        	setState(myStr) 
        # print(myStr + ":   " + str(myState))   
-        if myState == 1: 
-            setSeats(myStr)
-            setChipCount(myStr)
-        if myState == 2:
-            setPotSize(myStr)
-        if myState == 3:
-            setBets3(myStr)
-            setRaises3(myStr)
-            setCalls3(myStr)
-            setPotSize(myStr)
-        if myState == 4:
-            setBets4(myStr)
-            setRaises4(myStr)
-            setCalls4(myStr)
-            setPotSize(myStr)
-        if myState == 5:
-            setBets5(myStr)
-            setRaises5(myStr)
-            setCalls5(myStr)
-            setPotSize(myStr)
-        if myState == 6:
-            setBets6(myStr)
-            setRaises6(myStr)
-            setCalls6(myStr)
-            setPotSize(myStr)
-        if myState == 7:
-            setWinner(myStr)
+        	if myState == 1: 
+            	setSeats(myStr)
+            	setChipCount(myStr)
+        	if myState == 2:
+            	setPotSize(myStr)
+        	if myState == 3:
+            	setBets3(myStr)
+            	setRaises3(myStr)
+            	setCalls3(myStr)
+            	setPotSize(myStr)
+        	if myState == 4:
+            	setBets4(myStr)
+            	setRaises4(myStr)
+            	setCalls4(myStr)
+            	setPotSize(myStr)
+        	if myState == 5:
+            	setBets5(myStr)
+            	setRaises5(myStr)
+            	setCalls5(myStr)
+            	setPotSize(myStr)
+        	if myState == 6:
+            	setBets6(myStr)
+            	setRaises6(myStr)
+            	setCalls6(myStr)
+            	setPotSize(myStr)
+        	if myState == 7:
+            	setWinner(myStr)
+            except:
+            	continue
 
   
             
